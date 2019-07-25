@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9-_]+)$ index.php?controller=$1
+RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)$ index.php?controller=$1&action=$2
+RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([0-9]+)$ index.php?controller=$1&action=$2&id=$3
+RewriteRule ^(.*)\.html$ $1.php
